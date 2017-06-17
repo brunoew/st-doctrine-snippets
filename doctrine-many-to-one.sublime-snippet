@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @ORM\ManyToOne(targetEntity="${1:target}", inversedBy="${2:inverse}")
+ * @ORM\JoinColumn(name="id_${1/(.*)/\l$1/}", referencedColumnName="id")
+ */
+protected \$${1/(.*)/\l$1/};
+
+]]></content>
+    <tabTrigger>dmto</tabTrigger>
+    <scope>source.php</scope>
+</snippet>
