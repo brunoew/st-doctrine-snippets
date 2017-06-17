@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @ORM\Column(type="${1:type}")
+ *
+ * @var ${1:type}
+ */
+protected \$${2:property};
+]]></content>
+    <tabTrigger>dp</tabTrigger>
+    <scope>source.php</scope>
+    <description>Doctrine property</description>
+</snippet>
