@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @ORM\OneToMany(targetEntity="${1:target}", mappedBy="${2:map}")
+ * @ORM\JoinColumn(name="id", referencedColumnName="id_${2/(.*)/\l$1/}")
+ */
+protected \$${1/(.*)/\l$1/}s;
+
+]]></content>
+    <tabTrigger>dotm</tabTrigger>
+    <scope>source.php</scope>
+</snippet>
