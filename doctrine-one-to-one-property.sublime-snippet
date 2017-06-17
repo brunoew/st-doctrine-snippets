@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @ORM\OneToOne(targetEntity="${1:target}")
+ * @ORM\JoinColumn(name="id_${1/(.*)/\l$1/}", referencedColumnName="id")
+ */
+protected \$${1/(.*)/\l$1/};
+]]></content>
+    <tabTrigger>doo</tabTrigger>
+    <scope>source.php</scope>
+</snippet>
