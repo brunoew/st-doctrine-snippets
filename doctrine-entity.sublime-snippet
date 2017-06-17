@@ -1,0 +1,60 @@
+<snippet>
+    <content><![CDATA[
+namespace W6\Model;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * \W6\Model\\${1:Entity}
+ *
+ * @ORM\Entity(repositoryClass="W6\Repository\\${1:Entity}Repository")
+ * @ORM\Table(name="${1:Entity}")
+ */
+class ${1:Entity}
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected \$id;
+
+
+    public function __construct()
+    {
+    }
+
+    /**
+     * @param integer \$id
+     * @return \W6\Model\\${1:Entity}
+     */
+    public function setId(\$id)
+    {
+        \$this->id = \$id;
+
+        return \$this;
+    }
+
+    /**
+     * @return integer
+     */
+    public function getId()
+    {
+        return \$this->id;
+    }
+
+    /* SETTERS AND GETTERS */
+
+    /* ------------------- */
+
+
+    public function __sleep()
+    {
+        return array('id');
+    }
+}
+]]></content>
+    <tabTrigger>de</tabTrigger>
+    <scope>source.php</scope>
+    <description>Doctrine Entity</description>
+</snippet>
