@@ -1,0 +1,54 @@
+<snippet>
+    <content><![CDATA[
+{% extends 'admin.twig' %}
+
+{% block breadCrumb %}
+    <li><a href="/admin/{{module}}">{{moduleName}}</a></li>
+    <li class="active">Cadastro de {{moduleName}}</li>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-white">
+        <div class="panel-heading">
+          <h4 class="panel-title">Cadastro de {{moduleName}}</h4>
+        </div>
+        <div class="panel-body">
+          <form name="create" id="formCrud" action="/admin/{{module}}/save" method="post" enctype="multipart/form-data">
+            <div class="form-group col-md-12">
+              <label for="${1}">${1/(.*)/\u$1/}</label>
+              <input type="text" class="form-control" required name="${1/(.*)/\l$1/}" id="${1/(.*)/\l$1/}" value="{{item.${1/(.*)/\l$1/}}}" >
+            </div>
+
+            <div class="form-group col-md-12">
+              <br>
+              <label for="ativo">{{moduleName}} ativo?</label> <br>
+              <div class="switch-button switch-button-sm switch-button-yesno">
+                <input type="checkbox" name="ativo" id="ativo" {% if item is not defined or item.ativo %} checked="checked" {% endif %}>
+                <span><label for="ativo"></label></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-md-12">
+            <br><hr>
+            <button class="btn btn-lg btn-primary pull-right" type="submit"><i class="fa fa-save"></i> Salvar</button>
+            {% if item is defined %}
+              <a href="{{baseUrl}}/admin/{{module}}" class="cancel btn btn-lg btn-danger">Cancelar alteração</a>
+            {% else %}
+              <a href="{{baseUrl}}/admin/{{module}}" class="cancel btn btn-lg btn-danger">Cancelar</a>
+            {% endif %}
+            <input type="hidden" name="method" value="{% if item is defined %}PUT{% else %}POST{% endif %}">
+            <input type="hidden" name="id" value="{{item.id}}">
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+]]></content>
+    <tabTrigger>w6form</tabTrigger>
+</snippet>

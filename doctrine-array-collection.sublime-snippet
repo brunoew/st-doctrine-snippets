@@ -1,0 +1,7 @@
+<snippet>
+    <content><![CDATA[
+use Doctrine\Common\Collections\ArrayCollection;
+]]></content>
+    <tabTrigger>ac</tabTrigger>
+    <scope>source.php</scope>
+</snippet>

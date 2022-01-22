@@ -1,0 +1,28 @@
+<snippet>
+    <content><![CDATA[
+namespace W6\\Model;
+
+use Illuminate\\Database\\Eloquent\\SoftDeletes;
+use W6\Model\Model;
+
+class ${TM_FILENAME/\.php//} extends Model
+{
+    public const MODULE_NAME = "${1:module}";
+
+    protected \$fillable = [
+        '${2}',
+    ];
+
+    protected \$casts = [
+    ];
+
+    public function casts()
+    {
+        return \$this->casts;
+    }
+}
+
+]]></content>
+    <tabTrigger>lmodel</tabTrigger>
+    <scope>source.php</scope>
+</snippet>

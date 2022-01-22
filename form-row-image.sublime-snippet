@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[
+<div class="row form-group col-md-12">
+  {% if item.${1:imagem} %}
+    <div class="form-group col-md-3">
+      {{ cl_image_tag(item.${1/(.*)/\l$1/}, opts)|raw }}
+    </div>
+  {% endif %}
+  <div class="form-group {{item.${1/(.*)/\l$1/} ? 'col-md-9' : 'col-md-12'}}">
+    <label for="file">${1/(.*)/\u$1/}</label>
+    <input type="file" class="form-control" name="${1/(.*)/\l$1/}">
+  </div>
+</div>
+]]></content>
+    <tabTrigger>fri</tabTrigger>
+</snippet>

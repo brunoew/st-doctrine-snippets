@@ -1,0 +1,44 @@
+<snippet>
+	<content><![CDATA[
+
+namespace W6\Controller;
+
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
+use Silex\Application;
+use Silex\ControllerProviderInterface;
+
+class ${TM_FILENAME/\.php//} extends CrudController implements ControllerProviderInterface
+{
+
+    public function connect(Application \$app)
+    {
+        \$this->module = '${1:module}s';
+
+        \$ctr = parent::connect(\$app);
+
+        \$this->globalViewVars['module'] = \$this->module;
+        \$this->globalViewVars['moduleName'] = "${1/(.*)/\u$1/}s";
+        \$this->entityNS = 'W6\Model\\${1/(.*)/\u$1/}';
+
+        return \$ctr;
+    }
+
+
+    public function getItens()
+    {
+        \$this->globalViewVars['itens'] = \$this->em->getRepository(\$this->entityNS)->findAll();
+    }
+
+    protected function setProperties(&\$entity, Request \$request, Application \$app)
+    {
+        \$entity->set${2:Prop}(\$request->get('${2/(.*)/\L$1/g}'))
+               ->set${3:Prop}(\$request->get('${3/(.*)/\L$1/g}'))
+                $4;
+    }
+}
+
+]]></content>
+	<tabTrigger>ctr</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

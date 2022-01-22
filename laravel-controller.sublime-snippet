@@ -1,0 +1,32 @@
+<snippet>
+    <content><![CDATA[
+namespace W6\\Http\\Controllers;
+
+use Illuminate\\Support\\Facades\\Validator;
+use Illuminate\\Http\\Request;
+use \\W6\Http\\Controllers\\CrudController;
+use \\W6\Model\\${TM_FILENAME/Controller\.php//};
+
+class ${TM_FILENAME/\.php//} extends CrudController
+{
+    protected \$module = "${TM_FILENAME/Controller\.php//\u}";
+    protected \$moduleName = "${2/(.*)/\u$2/}";
+    protected \$moduleNamePlural = "${2/(.*)/\u$2/}s";
+    protected \$entityClass = ${TM_FILENAME/Controller\.php//}::class;
+    protected \$orderBy = ['${3:id}' => 'asc'];
+
+    protected function validator(array \$data)
+    {
+        \$validations =  [
+            '${3}' => 'required|string|max:255',
+        ];
+
+        \$validator =  Validator::make(\$data, \$validations);
+        return \$validator;
+    }
+}
+
+]]></content>
+    <tabTrigger>lctr</tabTrigger>
+    <scope>source.php</scope>
+</snippet>

@@ -1,0 +1,6 @@
+<snippet>
+	<content><![CDATA[
+\{\{app.translator.trans('${1}')\}\}
+]]></content>
+	<tabTrigger>trans</tabTrigger>
+</snippet>

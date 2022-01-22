@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+uniqueConstraints={@ORM\UniqueConstraint(name="${TM_FILENAME/\.php//}_$1_UNIQUE", columns={"${1/(.*)/$1/}"})}
+]]></content>
+	<tabTrigger>uniq</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

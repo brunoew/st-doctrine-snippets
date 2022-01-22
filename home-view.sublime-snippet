@@ -1,0 +1,42 @@
+<snippet>
+    <content><![CDATA[
+{% extends 'admin.twig' %}
+
+{% block breadCrumb %}
+  <li class="active">{{moduleName}}</li>
+{% endblock %}
+
+{% block js %}
+  <script>
+    \$(document).ready(function (){
+      App.dataTables();
+    });
+  </script>
+{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-white">
+        <div class="panel-heading">
+          <h4 class="title">{{moduleName}} cadastrados</h4> <br>
+          <div class="btns">
+              <a href="/admin/{{module}}/form" class="btn btn-space btn-info btn-big"><i class="icon mdi mdi-plus"></i> Adicionar </a>
+          </div>
+        </div>
+        <div class="panel-body">
+          {% if itens|length %}
+            {% set data = {'Foto': {'isFile': true, 'field': 'logo'}, 'Nome': 'nome'} %}
+            {% include "common/table.twig" with {options: {isActivable: true, isSortable: true}, items: itens, data: data } %}
+          {% else %}
+            {% include "common/no-items.twig" %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+]]></content>
+    <tabTrigger>home</tabTrigger>
+</snippet>

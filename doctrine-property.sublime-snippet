@@ -1,9 +1,7 @@
 <snippet>
     <content><![CDATA[
 /**
- * @ORM\Column(type="${1:type}")
- *
- * @var ${1:type}
+ * @ORM\Column(type="${1:string}")
  */
 protected \$${2:property};
 ]]></content>

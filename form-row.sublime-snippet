@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[
+<div class="form-group col-md-12">
+  <label for="${1:field}">${1/(.*)/\u$1/}</label>
+  <input type="text" class="form-control" name="${1/(.*)/\l$1/}" id="${1/(.*)/\l$1/}" value="{{item.${1/(.*)/\l$1/}}}" >
+</div>
+]]></content>
+    <tabTrigger>fr</tabTrigger>
+</snippet>

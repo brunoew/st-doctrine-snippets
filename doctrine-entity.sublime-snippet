@@ -5,12 +5,12 @@ namespace W6\Model;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * \W6\Model\\${1:Entity}
+ * \W6\Model\\${TM_FILENAME/\.php//}
  *
- * @ORM\Entity(repositoryClass="W6\Repository\\${1:Entity}Repository")
- * @ORM\Table(name="${1:Entity}")
+ * @ORM\Entity(repositoryClass="W6\Repository\\${TM_FILENAME/\.php//}Repository")
+ * @ORM\Table(name="${TM_FILENAME/\.php//}")
  */
-class ${1:Entity}
+class ${TM_FILENAME/\.php//}
 {
     /**
      * @ORM\Id
@@ -26,7 +26,7 @@ class ${1:Entity}
 
     /**
      * @param integer \$id
-     * @return \W6\Model\\${1:Entity}
+     * @return \W6\Model\\${TM_FILENAME/\.php//}
      */
     public function setId(\$id)
     {
@@ -53,6 +53,7 @@ class ${1:Entity}
         return array('id');
     }
 }
+
 ]]></content>
     <tabTrigger>de</tabTrigger>
     <scope>source.php</scope>

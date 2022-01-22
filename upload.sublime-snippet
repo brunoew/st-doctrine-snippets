@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+\$file = \$request->files->get('file');
+if (\$file) {
+    \$entity->setFoto(\$app['upload']->upload(\$file));
+}
+]]></content>
+    <tabTrigger>up</tabTrigger>
+    <scope>source.php</scope>
+</snippet>

@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * @var \Doctrine\Common\Collections\Collection|${1:Model}[]
+ *
+ * @ORM\ManyToMany(targetEntity="${1:OtherModel}", inversedBy="${2:${TM_FILENAME/\.php//}}")
+ * @ORM\JoinTable(
+ *  name="${1/(.*)/\l$1/}_${2/(.*)/\l$1/}",
+ *  joinColumns={
+ *      @ORM\JoinColumn(name="${2/(.*)/\l$1/}_id", referencedColumnName="id")
+ *  },
+ *  inverseJoinColumns={
+ *      @ORM\JoinColumn(name="${1/(.*)/\l$1/}_id", referencedColumnName="id")
+ *  }
+ * )
+ */
+protected \$${1/(.*)/\l$1/}${2/(.*)/\u$1/}s;
+]]></content>
+    <tabTrigger>dmtm</tabTrigger>
+    <scope>source.php</scope>
+</snippet>

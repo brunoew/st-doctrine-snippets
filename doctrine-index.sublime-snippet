@@ -1,0 +1,7 @@
+<snippet>
+	<content><![CDATA[
+indexes={@ORM\Index(name="idx_$1", columns={"$1"})}
+]]></content>
+	<tabTrigger>idx</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

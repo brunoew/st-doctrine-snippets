@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+\$file = \$request->files->get('${1:file}');
+if (\$file) {
+    \$filename = time() . \$file->getClientOriginalName();
+    \$file->move(\$app['config.path'] . '/upload/' . \$this->module, \$filename);
+    \$entity->set${1/(.*)/\u$1/}(\$filename);
+}
+
+]]></content>
+    <tabTrigger>up</tabTrigger>
+    <scope>source.php</scope>
+</snippet>

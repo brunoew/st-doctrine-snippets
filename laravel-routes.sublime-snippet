@@ -1,0 +1,29 @@
+<snippet>
+	<content><![CDATA[
+Route::group([
+    'as'     => '${1}.',
+    'prefix' => '${1}'
+], function () {
+    Route::get('/', ["uses" => '\\W6\\Http\\Controllers\\${1/(.*)/\u$1/}Controller@index', "as" => "home"])
+        ->middleware('can:view,W6\\Model\\${1/(.*)/\u$1/}'); // List all
+
+    Route::get('/form', ["uses" => '\\W6\\Http\\Controllers\\${1/(.*)/\u$1/}Controller@form', "as" => "create"])
+        ->middleware('can:create,W6\\Model\\${1/(.*)/\u$1/}'); // FORM Add new
+
+    Route::get('/form/{item}', ["uses" => '\\W6\\Http\\Controllers\\${1/(.*)/\u$1/}Controller@form', "as" => "edit"])
+        ->middleware('can:update,W6\\Model\\${1/(.*)/\u$1/}'); // FORM Edit one
+
+    Route::post('/', ["uses" => '\\W6\\Http\\Controllers\\${1/(.*)/\u$1/}Controller@save', "as" => "save"])
+        ->middleware('can:create,W6\\Model\\${1/(.*)/\u$1/}'); // Save new
+
+    Route::put('/{item}', ["uses" => '\\W6\\Http\\Controllers\\${1/(.*)/\u$1/}Controller@save', "as" => "update"])
+        ->middleware('can:update,W6\\Model\\${1/(.*)/\u$1/}'); // Save edit
+
+    Route::get('/delete/{item}', ["uses" => '\\W6\\Http\\Controllers\\${1/(.*)/\u$1/}Controller@destroy', "as" => "delete"])
+        ->middleware('can:delete,W6\\Model\\${1/(.*)/\u$1/}'); // Delete one
+});
+
+]]></content>
+	<tabTrigger>lroute</tabTrigger>
+	<scope>source.php</scope>
+</snippet>

@@ -1,0 +1,41 @@
+<snippet>
+    <content><![CDATA[
+/**
+ * Add $1 entity to collection (one to many).
+ *
+ * @param \W6\Model\\${1/(.*)/\u$1/} \$${1/(.*)/\l$1/}
+ * @return self
+ */
+public function add${1/(.*)/\u$1/}(${1/(.*)/\u$1/} \$${1/(.*)/\l$1/})
+{
+    \$this->${1/(.*)/\l$1/}s[] = \$${1/(.*)/\l$1/};
+
+    return \$this;
+}
+
+/**
+ * Remove ${1/(.*)/\u$1/} entity from collection (one to many).
+ *
+ * @param \W6\Model\\${1/(.*)/\u$1/} \$${1/(.*)/\l$1/}
+ * @return self
+ */
+public function remove${1/(.*)/\u$1/}(${1/(.*)/\u$1/} \$${1/(.*)/\l$1/})
+{
+    \$this->${1/(.*)/\l$1/}s->removeElement(\$${1/(.*)/\l$1/});
+
+    return \$this;
+}
+
+/**
+ * Get ${1/(.*)/\u$1/} entity collection (one to many).
+ *
+ * @return \Doctrine\Common\Collections\Collection
+ */
+public function get${1/(.*)/\u$1/}s()
+{
+    return \$this->${1/(.*)/\l$1/}s;
+}
+]]></content>
+    <tabTrigger>add</tabTrigger>
+    <scope>source.php</scope>
+</snippet>
